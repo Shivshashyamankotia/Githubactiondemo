@@ -26,4 +26,4 @@ jobs:
         cache: 'npm'
     - run: npm i
     - run: npm install -g pm2 
-    - run: npm start pm2 --name frontend -- start
+    - run: pm2 start npm --name frontend -- start
