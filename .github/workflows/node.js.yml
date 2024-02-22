@@ -34,7 +34,11 @@ jobs:
     - name: test
       run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "sudo apt install -y nodejs"
     - name: test3
-      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "node --version"      
+      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "node --version"
+    - name: test4
+      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "sudo apt install -y npm"
+    - name: test4
+      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "sudo npm install -g pm2 "             
       
 
 
