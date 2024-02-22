@@ -31,14 +31,14 @@ jobs:
       run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "rm -rf node_modules || true"    
     - name: install dependencies  
       run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "sudo apt update"
-    - name: test
+    - name: nodejs
       run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "sudo apt install -y nodejs"
-    - name: test3
-      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "node --version"
-    - name: test4
+    - name: npm
       run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "sudo apt install -y npm"
+    - name: pm2
+      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "sudo npm install -g pm2" 
     - name: test4
-      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "sudo npm install -g pm2 "             
+      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "pm2 start npm --name frontend -- start"            
       
 
 
