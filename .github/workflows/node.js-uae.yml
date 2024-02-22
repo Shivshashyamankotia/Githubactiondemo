@@ -24,6 +24,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: rm -rf node_modules
     - run: npm i
     - run: npm install -g pm2
     - run: pm2 start npm --name frontend -- start
