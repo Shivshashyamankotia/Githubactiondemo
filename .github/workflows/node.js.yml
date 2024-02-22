@@ -30,8 +30,11 @@ jobs:
     - name: rm 
       run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "rm -rf node_modules || true"    
     - name: install dependencies  
-      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "npm install 20.11.0"
-    - name: install dependencies  
-      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "npm i"      
+      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "sudo apt update"
+    - name: test
+      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "sudo apt install nodejs"
+    - name: test
+      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "node --version"      
+      
 
 
