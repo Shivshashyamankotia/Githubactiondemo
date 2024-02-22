@@ -32,8 +32,8 @@ jobs:
     - name: install dependencies  
       run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "sudo apt update"
     - name: test
-      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "sudo apt install nodejs"
-    - name: test
+      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "sudo apt install nodejs -y"
+    - name: test3
       run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "node --version"      
       
 
