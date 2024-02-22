@@ -22,13 +22,5 @@ jobs:
           EC2_URL: $EC2_URL
     # then you can run commands/scripts directly on the EC2 instance e.g.:
     - name: Create a new file on the EC2 instance with "hello-world"
-      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "\
-       pwd && \
-       rm -rf Githubactiondemo && \
-       git clone https://github.com/Shivshashyamankotia/Githubactiondemo.git && \
-       cd Githubactiondemo && \
-       rm -rf node_modules || true && \
-       sudo npm install -g pm2 && \
-       npm install && \
-       pm2 start npm --name frontend -- start"
+      run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "rm -rf Githubactiondemo || true"
 
